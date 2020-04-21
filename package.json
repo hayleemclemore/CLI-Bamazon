@@ -1,0 +1,25 @@
+{
+  "name": "CLI-Bamazon",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bamazonCustomer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hayleemclemore/CLI-Bamazon.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hayleemclemore/CLI-Bamazon/issues"
+  },
+  "homepage": "https://github.com/hayleemclemore/CLI-Bamazon#readme",
+  "dependencies": {
+    "inquirer": "^7.1.0",
+    "mysql": "^2.18.1",
+    "prompt": "^1.0.0"
+  }
+}
