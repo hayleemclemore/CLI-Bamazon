@@ -21,8 +21,7 @@ var connection = mysql.createConnection({
   connection.connect(function(err) {
     if (err) throw err;
     console.log(`connected as id ${connection.threadId}`);
-    
-    displayProducts();
+    runApp();
   });
 
   function displayProducts(){
@@ -40,8 +39,92 @@ var connection = mysql.createConnection({
         }
         console.log(greeting);
         console.log(table.toString());
+        buyItem();
     });
-      connection.end();
+      
   }
 
+  function runApp() {
+    inquirer.prompt({
+      name:"choice",
+      type:"list",
+      message:"What would you like to do?",
+      choices:["Buy Something", "Exit"]
+    })
+    .then(function(response){
+      switch(response.choice) {
+        case "Buy Something":
+        displayProducts();
+        break;
+        case "Exit":
+        connection.end();
+        console.log("Thanks for visiting Bamazon! We hope to see you again soon.");
+        break;
+      }
+    })
+  }
  
+
+  function buyItem() {
+    inquirer.prompt([{
+      name:"itemID",
+      type:"input",
+      message:`\nEnter the ID number of the product you would like to buy?`,
+      validate: function(value) {
+        if (isNaN(value) === false) {
+          return true;
+        }
+        {
+          return false;
+        }
+      }
+    },
+    {
+      name:"quantity",
+      type:"input",
+      message:`\nHow many would you like to buy?`,
+      validate: function(value) {
+        if (isNaN(value) === false) {
+          return true;
+        }
+        {
+          return false;
+        }
+      } 
+    },
+    {
+      name:"confirmation",
+      type:"confirm",
+      message:`\nIs that correct?`,
+      default: true
+    }
+  ])
+    .then(function(userResponse){
+      //connect to entire table to pull and append data from specific columns
+      var query = "SELECT * FROM products WHERE ?";
+
+      //assigning the userResponse item chosen to the item_id column
+      connection.query(query, {item_id:userResponse.itemID}, function(err, response) {
+        if (err) throw err;
+      
+      //inform customer how many units they've purchased
+        console.log(`\nYou have chosen to buy ${userResponse.quantity} ${response[0].product_name}`); 
+    
+        if (userResponse.quantity >= response[0].stock_quantity) {
+          console.log(`Insufficient quantity.`)
+          runApp();
+        }
+        else {
+          console.log(`\nProcessing order...`);
+          var totalCost = userResponse.quantity * response[0].price;
+          var updateStock = response[0].stock_quantity - userResponse.quantity;
+          var updateTable = "UPDATE products SET stock_quantity = " + updateStock + " WHERE item_id = " + userResponse.itemID;
+          connection.query(updateTable, function(err, res){
+            if (err) throw err;
+            console.log(`\nYour purchase is complete. Your total is $${totalCost}.\nPlease come again soon.`)
+            connection.end();
+          });
+        }
+      });
+    });
+}
