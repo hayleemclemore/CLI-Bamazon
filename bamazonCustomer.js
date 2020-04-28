@@ -121,7 +121,7 @@ var connection = mysql.createConnection({
           var updateTable = "UPDATE products SET stock_quantity = " + updateStock + " WHERE item_id = " + userResponse.itemID;
           connection.query(updateTable, function(err, res){
             if (err) throw err;
-            console.log(`\nYour purchase is complete. Your total is $${totalCost}.\nPlease come again soon.`)
+            console.log(`\nYour purchase is complete. Your total is $${totalCost}\nPlease come again soon.`)
             connection.end();
           });
         }

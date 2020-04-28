@@ -25,7 +25,7 @@ INSERT INTO products(product_name, department_name, price, stock_quantity )
 VALUE ("Nespresso Coffee and Espresso Machine", "Kitchen and Dining", 201.99, 250);
 
 INSERT INTO products(product_name, department_name, price, stock_quantity )
-VALUE ("Weighted Blanket", "Home Decor", 189.70, 350);
+VALUE ("Weighted Blanket", "Home Decor", 189.74, 350);
 
 INSERT INTO products(product_name, department_name, price, stock_quantity )
 VALUE ("Bladeless Oscillating Tower Fan", "Home Decor", 986.23, 125);
@@ -34,10 +34,10 @@ INSERT INTO products(product_name, department_name, price, stock_quantity )
 VALUE ("8TB External Hard Drive", "Computer and Electronics", 144.99, 300);
 
 INSERT INTO products(product_name, department_name, price, stock_quantity )
-VALUE ("Nintendo Switch", "Computer and Electronics", 529.95, 100);
+VALUE ("Nintendo Switch", "Computer and Electronics", 529.96, 100);
 
 INSERT INTO products(product_name, department_name, price, stock_quantity )
-VALUE ("Apple AirPods Pro", "Computer and Electronics", 234.95, 250);
+VALUE ("Apple AirPods Pro", "Computer and Electronics", 234.98, 250);
 
 INSERT INTO products(product_name, department_name, price, stock_quantity )
 VALUE ("Rotating Lawn Sprinkler", "Garden & Outdoor", 19.99, 125);
