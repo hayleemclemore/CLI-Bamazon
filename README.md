@@ -6,7 +6,7 @@ Bamazon is a command line(CLI) application, an Amazon-like storefront that takes
 The purpose was to use "backend" technologies only. Node.js and MySQL skills were used along with NPM (Node Package Manager) in order to accomplish the tasks.
 
 
-## MySQL Database Setup
+## MySQL Database
    In order to run this application you will need to have MySQL database set up on your machine. If you don't already have it installed, you can install the correct version for your machine [here](https://www.npmjs.com/package/mysql). Once MySQL has been installed, you will be able to create the Bamazon database and products table using the SQL code found in schema.sql. Run this code inside MySQL to populate the database before running the customer interface.
 
 ## Customer Interface
@@ -26,7 +26,6 @@ To run the customer interface follow the steps below:
 
 ![results](./assets/images/processing.png)
 * Once the user confirms the information is correcf, they are present with their pruchase information and the total cost of the purchase. The inventory is updated to reflect the new stock-quantity after the items have been purchased. 
-
 
 
 ## Links
