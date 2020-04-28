@@ -2,9 +2,8 @@
 # CLI-Bamazon
 
 Bamazon is a command line(CLI) application, an Amazon-like storefront that takes in orders from customers and depletes stock from the store's inventory. This application takes in parameters and returns data using the npm [inquirer](https://www.npmjs.com/package/inquirer) package and the MySQL database backend in conjunction with the npm [mysql](https://www.npmjs.com/package/mysql) package.
-
-## Clearly state the problem the app is trying to solve (i.e. what is it doing and why) 
-The purpose was to use "backend" technologies only. Node.js and MySQL skills were used along with NPM (Node Package Manager) in order to accomplish the tasks. There is no front end to this application, therefore this is no html page to publish.
+ 
+The purpose was to use "backend" technologies only. Node.js and MySQL skills were used along with NPM (Node Package Manager) in order to accomplish the tasks.
 
 
 ## MySQL Database Setup
@@ -31,7 +30,7 @@ To run the customer interface follow the steps below:
 
 
 ## Links
-[repository](https://github.com/hayleemclemore/CLI-Bamazon)
+[Repository](https://github.com/hayleemclemore/CLI-Bamazon)
 
 ## Technologies used in the app:
     * Javascript
